@@ -20,7 +20,7 @@ if let colorHex = color.toHex() {
 ```
 
 ### Get RGB values from UIColor
-Get Red, Green and Blue values in 0...255 range
+* Get Red, Green and Blue values in 0...255 range
 
 ```swift
 print(color.rgba.red) //238
@@ -29,8 +29,8 @@ print(color.rgba.blue) //163
 ```
 
 ### Get HSB values from UIColor
-Get Hue value in 0...365 range
-Get Saturation and Brightness values in 0...100 range
+* Get Hue value in 0...365 range
+* Get Saturation and Brightness values in 0...100 range
 
 ```swift
 print(color.hsba.hue) //330.91

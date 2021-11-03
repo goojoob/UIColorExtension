@@ -49,6 +49,24 @@ extension UIColor {
         return (0, 0, 0, 0)
     }
     
+    var cmyk: (cyan: CGFloat, magenta: CGFloat, yellow: CGFloat, keyblack: CGFloat) {
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        if getRed(&r, green: &g, blue: &b, alpha: &a) {
+           if r==0 && g==0 && b==0 {
+               return (0, 0, 0, 1)
+           }
+           var c = 1 - r
+           var m = 1 - g
+           var y = 1 - b
+           let minCMY = min(c, m, y)
+           c = (c - minCMY) / (1 - minCMY)
+           m = (m - minCMY) / (1 - minCMY)
+           y = (y - minCMY) / (1 - minCMY)
+           return (c, m, y, minCMY)
+        }
+        return (0, 0, 0, 0)
+    }
+    
     func toHex(alpha: Bool = false) -> String? {
         guard let components = cgColor.components, components.count >= 3 else {
             return nil

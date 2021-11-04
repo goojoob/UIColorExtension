@@ -37,3 +37,13 @@ print(color.hsba.hue) //330.91
 print(color.hsba.saturation) //61.05
 print(color.hsba.brightness) //93.33
 ```
+
+### Get CMYK values from UIColor
+* Get Cyan, Magenta, Yellow and KeyBlack values
+
+```swift
+print(color.cmyk.cyan)
+print(color.cmyk.magenta)
+print(color.cmyk.yellow)
+print(color.cmyk.keyblack)
+```
